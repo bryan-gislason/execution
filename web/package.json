@@ -1,0 +1,29 @@
+{
+  "name": "web",
+  "description": "A web client",
+  "version": "0.1.0",
+  "dependencies": {
+    "@types/react": "16.0.40",
+    "@types/react-dom": "16.0.4",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "webpack": "4.1.1"
+  },
+  "scripts": {
+    "build": "webpack --config config/webpack.config.ts",
+    "start": "npm run build"
+  },
+  "devDependencies": {
+    "@types/webpack": "4.1.1",
+    "awesome-typescript-loader": "4.0.1",
+    "prettier": "1.11.1",
+    "shx": "0.2.2",
+    "source-map-loader": "0.2.3",
+    "ts-node": "5.0.1",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.10.0",
+    "tslint-react": "3.5.1",
+    "typescript": "2.7.2",
+    "webpack-cli": "^2.0.12"
+  }
+}

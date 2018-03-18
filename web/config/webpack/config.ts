@@ -1,4 +1,7 @@
+import * as path from 'path';
 import { Configuration } from 'webpack';
+
+const root = path.resolve(__dirname, "../../");
 
 const config: Configuration = {
   mode: "development",
@@ -6,7 +9,7 @@ const config: Configuration = {
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
-    path: __dirname + "/../dist"
+    path: __dirname + "/../../dist"
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -20,7 +23,11 @@ const config: Configuration = {
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+      {
+        loader: "awesome-typescript-loader",
+        options: { configFile: path.resolve(root, "tsconfig.dist.json") },
+        test: /\.tsx?$/
+      },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }

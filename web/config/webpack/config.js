@@ -5,7 +5,7 @@ const root = path.resolve(__dirname, "../../");
 module.exports = {
   mode: "development",
 
-  entry: "./src/index.tsx",
+  entry: "./src/main.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(root, "dist")

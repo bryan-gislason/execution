@@ -3,14 +3,28 @@
   "description": "An expressjs server",
   "version": "0.1.0",
   "author": "Bryan Gislason",
+  "license": "MIT",
   "scripts": {
-    "start": "node dist/main"
+    "build": "npm run build:dist",
+    "build:dist": "tsc --project tsconfig.json",
+    "start": "run-s build start:server:dev",
+    "start:dev": "tsc --watch --project tsconfig.json",
+    "start:server": "node dist/main.js",
+    "start:server:dev": "set DEBUG=dev:* && node dist/main.js"
   },
   "dependencies": {
-    "express": "4.16.3"
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
+    "express": "4.16.3",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/debug": "^0.0.30",
     "@types/express": "4.11.1",
+    "@types/morgan": "^1.7.35",
+    "@types/node": "^9.4.7",
+    "npm-run-all": "^4.1.2",
     "prettier": "1.11.1",
     "tsc": "1.20150623.0",
     "tslint": "5.9.1",

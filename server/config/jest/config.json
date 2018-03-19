@@ -1,0 +1,21 @@
+{
+  "coverageReporters": ["text", "text-summary", "html"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
+  },
+  "moduleFileExtensions": ["ts", "js"],
+  "modulePathIgnorePatterns": ["<rootDir>/coverage", "<rootDir>/dist"],
+  "modulePaths": ["<rootDir>/src"],
+  "rootDir": "../../",
+  "testRegex": "\\.test\\.(ts|tsx)$",
+  "transform": {
+    "^.+\\.(js|jsx)$": "babel-jest",
+    "^.+\\.(ts|tsx)$": "ts-jest/preprocessor.js"
+  },
+  "verbose": true
+}

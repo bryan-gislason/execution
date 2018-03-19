@@ -6,6 +6,6 @@
     "moduleResolution": "node",
     "noEmitHelpers": true
   },
-  "exclude": ["config", "dist"],
+  "exclude": ["config"],
   "extends": "./tsconfig.json"
 }

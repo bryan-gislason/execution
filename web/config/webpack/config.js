@@ -1,15 +1,14 @@
-import * as path from 'path';
-import { Configuration } from 'webpack';
+const path = require("path");
 
 const root = path.resolve(__dirname, "../../");
 
-const config: Configuration = {
+module.exports = {
   mode: "development",
 
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
-    path: __dirname + "/../../dist"
+    path: path.resolve(root, "dist")
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -25,7 +24,7 @@ const config: Configuration = {
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       {
         loader: "awesome-typescript-loader",
-        options: { configFile: path.resolve(root, "tsconfig.dist.json") },
+        options: { config: path.resolve(root, "tsconfig.dist.json") },
         test: /\.tsx?$/
       },
 
@@ -43,5 +42,3 @@ const config: Configuration = {
     "react-dom": "ReactDOM"
   }
 };
-
-export default config;

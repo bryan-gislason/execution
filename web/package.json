@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --config config/webpack/config.js",
     "build:watch": "webpack --watch --config config/webpack/config.js",
-    "start": "npm run build:watch",
+    "start": "run-p build:watch start:dev",
+    "start:dev":
+      "webpack-serve --open --config ./config/webpack/config.js --port 8000",
     "test": "run-p test:*",
     "test:jest": "jest --coverage --config config/jest/config.json",
     "test:tslint": "tslint --format verbose --project tsconfig.json"
@@ -42,6 +44,7 @@
     "tslint-react": "3.5.1",
     "typescript": "2.7.2",
     "webpack": "4.1.1",
-    "webpack-cli": "2.0.12"
+    "webpack-cli": "2.0.12",
+    "webpack-serve": "0.2.0"
   }
 }
